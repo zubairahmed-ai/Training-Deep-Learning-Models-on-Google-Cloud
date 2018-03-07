@@ -1,5 +1,5 @@
 # Training Models on Google-Cloud
-This describes necessary steps to train models on Google Cloud
+This describes necessary steps to train models on Google Cloud, assuming you are familiar with Google Cloud console and installed Google Cloud SDK
 
 ### Enable following APIs in Google Cloud console
 
@@ -10,6 +10,7 @@ This describes necessary steps to train models on Google Cloud
 
 
 #### Upload your datasets faster using parallel transfer
+> Rename bucket name with your own wherever it says **zubair-gc-bucket**
 
 ```python
 gsutil -m cp -r datasets gs://zubair-gc-bucket/datasets
