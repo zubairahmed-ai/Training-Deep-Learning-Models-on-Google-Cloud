@@ -1,4 +1,4 @@
-# Training Models on Google-Cloud
+# Training Deep Learning Models on Google-Cloud
 This describes necessary steps to train models on Google Cloud, assuming you are familiar with Google Cloud console and installed Google Cloud SDK
 
 ### Enable following APIs in Google Cloud console
