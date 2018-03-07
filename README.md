@@ -26,6 +26,14 @@ gsutil -m cp -r datasets gs://zubair-gc-bucket/datasets
 
 ![image](https://user-images.githubusercontent.com/1317442/37085387-bd9fad28-2216-11e8-8022-028275fa130c.png)
 
+* Add following in the cloudml-gpu.yaml configuration file
+```python
+trainingInput:
+    scaleTier: BASIC_GPU
+    runtimeVersion: "1.4"
+    pythonVersion: "3.5"
+```
+
 #### Open **Setup.py** and add following
 
 ```python
@@ -72,8 +80,11 @@ if args["--job-dir"] != '':
 > On windows cmd doesn't work with multiline text
 
 ```
-gcloud ml-engine jobs submit training job2 --package-path=./trainer --module-name=trainer/shallownet_train --job-dir=gs://zubair-gc-bucket/jobs/job2 --region=us-central1 --config=trainer/cloudml-gpu.yaml --runtime-version="1.4" -- --job_name="zubair-gc-job2"  --dataset=dataset/animals --model=shallownet_weights1.hdf5
+gcloud ml-engine jobs submit training job7 --package-path=./trainer --module-name=Keras_On_GoogleCloud.trainer.shallownet_train --job-dir=gs://zubair-gc-bucket/jobs/job7 --region=us-central1 --config=trainer/cloudml-gpu.yaml --runtime-version="1.4" -- --job_name="zubair-gc-job7"  --dataset=dataset/animals --model=shallownet_weights1.hdf5
 ```
+
+* In **-module-name** make sure you fully qualify your module name with your train file structure
+
 
 #### Job starts running on Google Cloud
 ![image](https://user-images.githubusercontent.com/1317442/37086691-0796fdf2-221a-11e8-90b3-a57564156886.png)
