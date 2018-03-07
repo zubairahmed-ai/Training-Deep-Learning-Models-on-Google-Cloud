@@ -80,10 +80,10 @@ if args["--job-dir"] != '':
 > On windows cmd doesn't work with multiline text
 
 ```
-gcloud ml-engine jobs submit training job7 --package-path=./trainer --module-name=Keras_On_GoogleCloud.trainer.shallownet_train --job-dir=gs://zubair-gc-bucket/jobs/job7 --region=us-central1 --config=trainer/cloudml-gpu.yaml --runtime-version="1.4" -- --job_name="zubair-gc-job7"  --dataset=dataset/animals --model=shallownet_weights1.hdf5
+gcloud ml-engine jobs submit training job7 --package-path=./trainer --module-name=trainer.shallownet_train --job-dir=gs://zubair-gc-bucket/jobs/job7 --region=us-central1 --config=trainer/cloudml-gpu.yaml --runtime-version="1.4" -- --job_name="zubair-gc-job7"  --dataset=dataset/animals --model=shallownet_weights1.hdf5
 ```
 
-* In **--module-name** make sure you fully qualify your module name with your train file structure
+
 
 
 #### Job starts running on Google Cloud
